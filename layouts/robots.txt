@@ -1,4 +1,0 @@
-User-agent: *
-{{ range where .Site.Pages "Params.bookSearchExclude" true }}
-Disallow: {{ .RelPermalink }}
-{{ end }}
