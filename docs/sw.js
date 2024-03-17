@@ -1,18 +1,18 @@
 const cacheName = self.location.pathname
 const pages = [
 
-  "/en/instincto/",
-  "/en/germany/",
-  "/en/meta/",
-  "/en/incest/",
-  "/en/eugenics/",
-  "/en/homonazi/",
-  "/en/spirituality/",
-  "/en/viral_phenomenon/",
-  "/en/ecotech/",
-  "/en/neandertals/",
-  "/",
-  "/en/atlantis/",
+  "/website/en/instincto/",
+  "/website/en/germany/",
+  "/website/en/meta/",
+  "/website/en/incest/",
+  "/website/en/eugenics/",
+  "/website/en/homonazi/",
+  "/website/en/spirituality/",
+  "/website/en/viral_phenomenon/",
+  "/website/en/ecotech/",
+  "/website/en/neandertals/",
+  "/website/",
+  "/website/en/atlantis/",
   
 ];
 
