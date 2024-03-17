@@ -1,0 +1,97 @@
+{{ if (or .Attributes.cite $.Title) }}
+	{{ template "partial/defaultFigure" . }}
+{{ else }}
+	{{ template "partial/defaultImage" . }}
+{{ end }}
+
+{{ define "partial/defaultFigure" }}
+	<figure {{with .Attributes.id}}id="{{.}}"{{end}}{{ with .Attributes.class}} class="{{.}}"{{end}}>
+	{{ with .Title }}<figcaption>{{.|$.Page.RenderString}}</figcaption>{{ end }}
+	{{ template "partial/defaultImage" .}}
+	{{with .Attributes.cite}}<cite>— {{.|$.Page.RenderString}}</cite>{{end}}
+	</figure>
+{{ end }}
+
+{{ define "partial/defaultImage" }}
+{{- $destination := urls.Parse .Destination }}
+{{- $img := "" }}
+{{- if $destination.IsAbs }}
+  {{- with resources.GetRemote ($destination|htmlUnescape) .String }}
+    {{- with .Err }}
+      {{- errorf "Unable to get remote image %s" $destination.String }}
+    {{- else }}
+      {{- $img = . }}
+    {{- end }}
+  {{- else }}
+    {{- errorf "Unable to get remote image %s" $destination.String }}
+  {{- end }}
+{{- else }}
+  {{- with .Page.Resources.Get $destination.String }}
+    {{- $img = . }}
+  {{- else }}
+    {{- with resources.Get $destination.String }}
+      {{- $img = . }}
+    {{- else }}
+      {{- errorf "Unable to get image %s." $destination.String }}
+    {{- end }}
+  {{- end }}
+{{- end }}
+	{{ $Type := "video"}}
+	{{ if eq $img.MediaType.MainType "image" }}
+		{{ if in $img.MediaType.Suffixes "svg" }}
+			{{ $Type = "svg" }}
+		{{ else }}
+			{{ $Type = "image"}}
+		{{end}}
+	{{end }}
+	{{ if eq $Type "svg" }}
+		{{$img.Content}}
+	{{ else if eq $Type "video" }}
+	<video{{ with .Attributes.class}} class="{{.}}"{{end}} autoplay loop muted controls poster><source width="2OO" src="{{ $img.RelPermalink }}" type="video/{{path.Ext $destination.Path}}">There should have been a video here but your browser does not seem to support it.</video>
+	{{ else }}
+	<a{{ with .Attributes.class}} class="{{.}}"{{end}} role="presentation" target="_blank" {{with .Attributes.link}}href="{{.}}" rel="nofollow external"{{else}}href="{{$img.RelPermalink}}"{{end}}>
+	{{ $src := slice }}
+	{{- $smallest := "" -}}
+	{{- $very_small := "" -}}
+	{{- $small := "" -}}
+	{{- $medium := "" -}}
+	{{  $Sizes := "" }}
+	{{ if gt $img.Width 200 }}
+		{{ $smallest = $img.Resize "200x q95" }}
+	{{ else }}
+		{{ $smallest = $img }}
+	{{ end }}
+	{{ if gt $img.Width 400 }}
+		{{ $very_small = $img.Resize "400x q95" }}
+	{{ else }}
+		{{ $very_small = $img }}
+	{{ end }}
+	{{ if gt $img.Width 604 }}
+		{{ $small = $img.Resize "604x q95" }}
+	{{ else }}
+		{{ $small = $img }}
+	{{ end}}
+	{{ if gt $img.Width 800 }}
+		{{ $medium = $img.Resize "800x q95" }}
+	{{ else }}
+		{{ $medium = $img }}
+	{{ end}}
+	{{ range uniq (slice $medium $small $very_small $smallest) }}
+	  {{ $src = $src | append (printf "%s %dw" .RelPermalink .Width) }}
+	{{ end }}
+	{{ $src = delimit $src `, ` }}
+	{{if in .Attributes.class "center"}}
+		{{ $Sizes = "(max-width: 350px) 100vw, (max-width: 600px) 100vw, 70vw"}}
+	{{ else }}
+		{{ $Sizes = "(max-width: 350px) 100vw, (max-width: 600px) 50vw, 400px"}}
+	{{ end }}
+	{{ $loading := (dict "url" $medium.RelPermalink "srcset" $src "sizes" $Sizes) }}
+	<img src="{{ $medium.RelPermalink }}" srcset="{{ $src }}" loading={{if in .Attributes.loading "eager"}}"eager" fetchpriority="high"{{else}}"lazy"{{end}} {{with default .Title .Text }}alt="{{.}}"{{end}} {{ with .Title }}title="{{ .|plainify }}"{{end }} sizes="{{$Sizes}}" {{with $medium}}width="{{.Width}}px" height="{{.Height}}px" style="--height-limit:{{.Height}}px"{{end}}>
+	</a>
+	{{ if eq .Attributes.loading "eager"}}
+		{{ $loading := dict "url" $medium.RelPermalink "srcset" $src "sizes" $Sizes }}
+		{{ $.Page.Store.Add "preload-list" (slice $loading) }}
+	{{ end }}
+	{{end}}
+	{{ if not .IsBlock}}{{ errorf "%q %q: Here images wrongly stacked on the same line" .Page.Path .Destination }}{{end}}
+{{ end }}

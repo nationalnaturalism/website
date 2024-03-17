@@ -1,0 +1,110 @@
+languageCode = 'en-us'
+disableKinds = ['taxonomy','rss']
+title = 'National Naturalism'
+ignoreLogs = ['error-remote-getjson', 'cascade-pattern-with-extension']
+timeout = 1000000
+enableRobotsTXT = true
+copyright = 'Everything is mine'
+disableHugoGeneratorInject = true
+publishDir = 'docs'
+BaseURl = "https://nationalnaturalism.github.io/website/"
+
+[outputs]
+page = ['html','bib']
+[outputformats.html]
+weight = 1 # This is really important, html must be rendered first!
+isPlainText = true
+notAlternative = true
+[outputformats.bib]
+baseName = 'bib'
+isPlainText  =true
+mediaType = 'text/plain'
+weight = 2
+
+[permalinks]
+contentDir = 'content'
+docs = '/en/:slugorfilename/'
+
+[params]
+with_expurged=true
+mail="natural.nationalism@gmail.com"
+BookServiceWorker = "precache"
+opengraph_io_api_key = "0498dc2b-8ca7-4c0f-a2ce-99b361b2117b"
+brand = "/Images/history/symboles_site/brand_symbol.webp"
+allow_io_api = false
+description = 'The purpose of this site is to promote a way of life and a vision of the world based on science as well as the spiritual rehabilitating the instincts we evolved with in terms of food, health and love life.'
+keywords = "politics, love life, extrasensory, national naturalism, instincts, sexuality, happiness, children, pedophilia, incest, nordic race, human condition, spirituality, metapsychics, paranormal, rawfood, regeneration, eugenics"
+twitter = 'NNPartyNow'
+
+[imaging]
+anchor = 'Smart'
+bgColor = '#ffffff'
+hint = 'picture'
+quality = 100
+resampleFilter = 'Lanczos'
+
+[markup]
+[markup.goldmark.parser]
+wrapStandAloneImageWithinParagraph = false
+[markup.goldmark.parser.attribute]
+block = true
+title = true
+[markup.goldmark.renderer]
+unsafe = true
+hardWraps = true
+[markup.highlight]
+codeFences = true
+[markup.tableOfContents]
+startLevel = 2
+endLevel = 3
+ordered = true
+
+[minify]
+minifyOutput = true
+[minify.tdewolff.html]
+keepDefaultAttrVals = false
+keepEndTags = false          
+
+[security.exec]
+allow = ['^go$', '^npx$', '^postcss$', 'micro']
+
+[[module.mounts]]
+source = 'assets'
+target = 'assets'
+
+[[module.mounts]]
+source = "content"
+target = "content"
+
+[[module.mounts]]
+source = "content/intro.md"
+target = "content/_index.md"
+
+[[cascade]]
+[cascade.build]
+list = 'never'
+render = 'never'
+[cascade._target]
+path = '/intro'
+
+[[cascade]]
+[cascade.build]
+list = 'local'
+render = 'never'
+[cascade._target]
+kind = 'section'
+
+[[module.mounts]]
+source = 'static'
+target = 'assets'
+[[module.mounts]]
+source = '../Images'
+target = 'assets/Images'
+
+[[cascade]]
+bookHidden = false
+bookSearchExclude = false
+
+[frontmatter]
+lastmod = [':fileModTime']
+

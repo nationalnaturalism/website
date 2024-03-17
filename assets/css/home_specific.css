@@ -1,0 +1,14 @@
+@layer home {
+	body {grid-template-columns: 15% 1fr}
+	figcaption {font:2.5rem "norse"}
+	h1+label {visibility:collapse}
+	figure {margin:unset}
+	article {outline:unset}
+	img {max-height:unset}
+	article p {font-size: clamp(16px, 2vw,20px);}
+	article header {display:none}
+	@media (width <= 350px) {
+		article p {font-size: 20px;}
+		figure {display:none}
+	}
+}

@@ -1,0 +1,58 @@
+title = 'Instincto & Meta'
+ignoreLogs = ['error-remote-getjson', 'cascade-pattern-with-extension']
+BaseURL = "/"
+
+[params]
+brand = "/Images/history/symboles_site/brand_symbol_expurged.jpg"
+description = 'The purpose of this site is to promote a way of life and a vision of the world based on science as well as the spiritual rehabilitating the instincts we evolved with in terms of food, health and love life.'
+keywords = "love life, extrasensory, instincts, sexuality, happiness, children, pedophilia, incest,  human condition, spirituality, metapsychics, paranormal, rawfood, regeneration"
+with_expurged=false
+mail = "00120260a@gmail.com"
+
+[[cascade]]
+url = '/'
+[cascade._target]
+path = '/docs/Biology/instincto'
+
+[[module.mounts]]
+source = 'assets'
+target = 'assets'
+
+[[module.mounts]]
+source = 'content-expurged'
+target = 'content'
+[[module.mounts]]
+source = "content"
+target = "content"
+
+
+[[module.mounts]]
+source = "content/intro.md"
+target = "content/_index.md"
+
+[[cascade]]
+[cascade.build]
+list = 'never'
+render = 'never'
+[cascade._target]
+path = '/intro'
+
+[[cascade]]
+[cascade.build]
+list = 'local'
+render = 'never'
+[cascade._target]
+kind = 'section'
+
+[[module.mounts]]
+source = 'static'
+target = 'assets'
+[[module.mounts]]
+source = '../Images'
+target = 'assets/Images'
+
+[[cascade]]
+bookHidden = false
+bookSearchExclude = false
+
+
