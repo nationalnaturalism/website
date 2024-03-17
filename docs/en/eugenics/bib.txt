@@ -1,0 +1,148 @@
+### Basic background
+
+numerical : https://en.wikipedia.org/wiki/Quantitative_trait_locus
+
+### Beyond selection
+
+Does reduced MHC diversity decrease viability of vertebrate populations? (2010) : https://doi.org/10.1016/j.biocon.2009.07.026
+
+How pathogens drive genetic diversity: MHC, mechanisms and misunderstandings (2010) : https://doi.org/10.1098/rspb.2009.2084
+
+Analysis of Haplotype Sequences (2015) : www.doi.org/10.5772/61794
+
+Analysis of Haplotype Sequences (2015) : www.doi.org/10.5772/61794
+
+Haploid selection within a single ejaculate increases offspring fitness (2017) : https://doi.org/10.1073/pnas.1705601114
+
+The evidence for Larmarck, Steele et al. (2000) : https://www.academia.edu/10949098/Evidence_for_Lamarck
+
+Soma-to-Germline Transmission of RNA in Mice Xenografted with Human Tumour Cells: Possible Transport by Exosomes (2014) : https://doi.org/10.1371/journal.pone.0101629
+
+Philopatry, inbreeding, and the evolution of sex (1986) : https://annas-archive.org/md5/591c6102ec0ac425f89996cbf6dbf7c1
+
+Recurrent early pregnancy loss and consanguinity (2002) : www.doi.org/10.1016/s1472-6483(10)61620-3
+
+Human leukocyte antigen matching and fetal loss: results of a 10 year prospective study, 1998, Ober et al (1998) : https://doi.org/10.1093/humrep/13.1.33
+
+Applications of and considerations for using CRISPR–Cas9-mediated gene conversion systems in rodents (2021) : https://www.nature.com/articles/s41596-021-00646-7
+
+PRDM9, a driver of the genetic map (2018) : https://doi.org/10.1371/journal.pgen.1007479
+
+Genesis of ancestral haplotypes: RNA modiﬁcations and reverse transcription–mediated polymorphisms (2021) : https://doi.org/10.1016/j.humimm.2010.12.005
+
+Molecules to Medicine with mTOR (2016) : https://doi.org/10.1016/C2014-0-03321-7
+
+Early embryo mortality in natural human reproduction: What the data say (2016) : www.doi.org/10.12688/f1000research.8937.2
+
+### Breeding criteria
+
+## Eugenic plan
+
+### Fetal eugenics
+
+### Genetic modification
+
+Haplotype structures and polymorphisms of dog leukocyte antigen (DLA) class I loci shaped by intralocus and interlocus recombination events (2022) : https://doi.org/10.1007/s00251-021-01234-5
+
+Targeted gene conversion induced by triplex-directed psoralen interstrand crosslinks in mammalian cells (2009) : https://academic.oup.com/nar/article/37/19/6378/2409473
+
+Efficient embryonic homozygous gene conversion via RAD51-enhanced interhomolog repair (2021) : https://pubmed.ncbi.nlm.nih.gov/34043941/
+
+The Time-Scale Of Recombination Rate Evolution In Great Apes (2015) : https://doi.org/10.1101/013755
+
+functional gamete creation : https://doi.org/10.1038/s41586-023-05834-x
+
+## Genetics
+
+#### Guideline for selective breeding
+
+#### Haploid selection
+
+Transmission ratio distortion: review of concept and implications for genetic association studies (2013) : www.doi.org/10.1007/s00439-012-1257-0
+
+Within-Ejaculate Sperm Selection and Its Implications for Assisted Reproduction Technologies (2021) : https://doi.org/10.1007/978-3-030-66292-9_20
+
+one semen over another : www.doi.org/10.1093/molehr/gav012
+
+before even fecundation : www.doi.org/10.1038/sj.cdd.4400396
+
+just 200 actually reach the egg : https://www.idahofertility.com/the-magic-that-happens-when-a-sperm-meets-an-egg-and-the-sparks-fly/
+
+aggressive environment : https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3949374/
+
+five days : https://doi.org/10.1023/a:1006527232605
+
+cryptic female choice : https://en.wikipedia.org/wiki/Cryptic_female_choice
+
+selectively bind : https://doi.org/10.1530/rep-07-0333
+
+storing it, and discarding the rest : www.doi.org/10.1093/molehr/gav012
+
+spontaneous abortions : https://www.doi.org/10.3892/etm.2022.11518
+
+### Inbreeding
+
+overcome this barrier : https://www.pnas.org/doi/abs/10.1073/pnas.2115248119
+
+wild brown trout : https://doi.org/10.1155/2017/2975187
+
+25% : https://en.wikipedia.org/wiki/Inbreeding
+
+more robust and redundant : https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8488904/
+
+genome duplication over the eons : https://www.nature.com/articles/ncomms4657
+
+### Lamarckism
+
+#### Meiotic drives
+
+eventually be discovered : https://doi.org/10.1016/B978-0-12-372568-4.00012-4
+
+selfish elements : https://doi.org/10.1371/journal.pgen.1007700
+
+#### Problelm with <em>in vitro</em> fertilization
+
+official British sources : https://www.hfea.gov.uk/about-us/publications/research-and-data/fertility-treatment-2021-preliminary-trends-and-figures/
+
+natural case : https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5443340/#:~:text=A%20recent%20re%2Danalysis%20of,vary%20substantially%20between%20individual%20women.
+
+epigenetic abberations : www.ncbi.nlm.nih.gov/pmc/articles/PMC7026576/
+
+higher success results : www.doi.org/10.1111/j.1439-0531.2009.01363.x
+
+### Quantal Genomics
+
+epistasy : https://en.wikipedia.org/wiki/Epistasis
+
+#### Soma-to-germaline connection
+
+Lamarck and Panspermia - On the Efficient Spread of Living Systems Throughout the Cosmos, Steele et al. (2019) : https://doi.org/10.1016/j.pbiomolbio.2019.08.010
+
+#### Somatic HyperMutation
+
+Lindley et al, How Evolution Occurs: Was Lamarck Also Right. EdgeScience, 8, 6-9 (2011) : https://www.scientificexploration.org/edgescience/8
+
+Analysis of Haplotype Sequences, Sally S. Lloyd, Edward J. Steele and Roger L. Dawkins (2015) : https://dx.doi.org/10.5772/61794
+
+Soma-to-germline feedback is implied by the extreme polymorphism at IGHV relative to MHC: The manifest polymorphism of the MHC appears greatly exceeded at Immunoglobulin loci, suggesting antigen-selected somatic V mutants penetrate Weismann's Barrier (2015) : https://europepmc.org/article/MED/25810320
+
+Germline V repertoires: Origin, maintenance, diversification, Steele, E. J., & Lindley, R. A. (2018) : https://doi.org/10.1111/sji.12670
+
+### Statement of purpose
+
+#### Directed miscarriages
+
+### The MHC and pathogen-driven selection
+
+mechanisms : www.doi.org/10.1111/j.1365-294X.2011.05367.x
+
+excessive inbreeding : https://doi.org/10.3390/cells8080783
+
+#### The power of Consanguinity
+
+producing non-coding RNA : https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3078729/
+
+mutation runaway : https://pubmed.ncbi.nlm.nih.gov/31778175/
+
+### Transmission Ratio Distortion
+

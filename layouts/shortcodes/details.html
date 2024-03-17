@@ -1,0 +1,6 @@
+ {{- $summary := cond .IsNamedParams (.Get "title") (.Get 0) -}}
+  <details{{ if .Get "open"}} open{{ end }}>
+  {{- $summary := cond .IsNamedParams (.Get "title") (.Get 0) -}}
+ <summary>{{ $summary | .Page.RenderString }}</summary>
+    {{ .Inner | .Page.RenderString }}
+</details>

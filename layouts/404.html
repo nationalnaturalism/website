@@ -1,0 +1,29 @@
+<!--
+{{- printf "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>" | safeHTML }}
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ops="http://www.idpf.org/2007/ops"
+      xml:lang="{{ default site.Language.Lang site.LanguageCode  }}" lang="{{ default site.Language.Lang site.LanguageCode  }}"> -->
+<!DOCTYPE html>
+<html lang="{{ default site.Language.Lang site.LanguageCode  }}"><head>
+    <style type="text/css">
+      * {
+        text-align: center;color:red !important;
+      }
+      .not-found h1 {
+        margin: .25em 0 0 0;
+        font-size: 40vmin;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="flex justify-center not-found">
+      <div>
+        <h1>404</h1>
+        <h2>Page Not Found</h2>
+        <h3>
+          <a href="{{ .Site.Home.RelPermalink }}">{{ .Site.Title }}</a>
+        </h3>
+      </div>
+    </main>
+  </body>
+  </html>

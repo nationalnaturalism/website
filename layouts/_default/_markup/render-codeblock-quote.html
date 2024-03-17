@@ -1,0 +1,6 @@
+{{ $author := .Attributes.author  }}
+{{ $class   := .Attributes.class }}
+{{ $cite   := .Attributes.cite }}
+<blockquote {{with .Attributes.id}}id="{{.}}" {{end}}{{with $class}} class="{{.}}"{{end}}{{if in $cite "]("}} cite="{{strings.TrimSuffix ")" (index (last 1 (split $cite "](")) 0)}}"{{end}}>{{ .Inner|$.Page.RenderString }}
+</blockquote>
+{{if or $author $cite}}<cite>{{$author|$.Page.RenderString}}—{{$cite|$.Page.RenderString}}</cite>{{end}}

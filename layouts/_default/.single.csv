@@ -1,0 +1,4 @@
+{{- range .Store.Get "all_sources" -}}
+{{ .title }}
+{{ .dest }}
+{{ end }}

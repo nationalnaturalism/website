@@ -1,0 +1,39 @@
+{{- $destination := .Destination -}}
+{{ if eq $destination "ADD_REF" }}
+	{{- warnf "Missing reference for link [%s](%s) in page %s" (.Text|htmlUnescape) $destination .Page.Path }}
+	{{.Text}}
+{{ else if eq $destination "#"}}
+	<span class="inner-comments" tooltip="Personal comment">
+	{{with (.Text|htmlUnescape) }}
+		{{if eq . "…"}}{{.|markdownify}}{{else}}[ - {{.|markdownify}} - ]{{end}}
+	{{end}}</span>
+	{{- else if eq $destination "ABBR" -}}<abbr {{with .Title -}}tooltip="{{.}}"{{- end -}} role="term">{{- .Text -}}</abbr>{{- else if eq $destination "DFN" -}}<dfn {{with .Title -}}tooltip="{{.}}"{{- end -}}>{{.Text}}</dfn>
+{{else}}
+	{{- $isRemote := or (strings.Contains $destination "://") (strings.HasPrefix $destination "www") }}
+{{- if $isRemote -}}
+		{{- if not (strings.HasPrefix $destination "http") }}
+			{{- $destination = print "https://" $destination -}}
+		{{- end -}}
+		{{ if eq .Destination ""}}{{return}}{{end}}
+		{{- with .Page.Store.Get "heading" -}}
+		  {{- $m := dict
+		    "headingID" .id
+		    "linkDestination" $.Destination
+		    "linkTitle" (default $.Title $.PlainText)
+		  -}}
+		  {{- $.Page.Store.Add "links" (slice $m) -}}
+		{{- end -}}
+	{{- else }}
+		{{- $url := urls.Parse .Destination }}
+		{{- with site.GetPage $url.Path }}
+			{{- $destination = .RelPermalink }}
+			{{with $url.Fragment}}{{- $destination = print $destination "#" . }}{{end}}
+		{{- else -}}
+			{{ with resources.Get .Destination }}
+				{{ $destination = .RelPermalink}}
+			{{ end}}
+		{{- end }}
+	{{ end }}
+	
+	<a {{with .Title}}tooltip="{{.|markdownify}}"{{end}} href="{{ $destination }}"{{if $isRemote}} rel="external nofollow" target="_blank"{{ end }}>{{- .Text -}}</a>
+{{- end -}}

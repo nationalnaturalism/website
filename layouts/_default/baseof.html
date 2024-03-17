@@ -1,0 +1,30 @@
+<!--
+{{- printf "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>" | safeHTML }}
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ops="http://www.idpf.org/2007/ops"
+      xml:lang="{{ default site.Language.Lang site.LanguageCode  }}" lang="{{ default site.Language.Lang site.LanguageCode  }}"> -->
+<!DOCTYPE html>
+<html lang="{{ default site.Language.Lang site.LanguageCode  }}">
+<head>{{ partial "docs/html-head" . }}
+{{ block "specific-head" . }}{{ end }}
+</head>
+<body data-pagefind-body>
+<input type="checkbox" id="showtoc">
+<input type="checkbox" id="showmenu">
+{{ block "menu-block" .}}
+<nav aria-label="Primary navigation">{{ partial "docs/menu" . }}</nav>
+{{ end }}
+<article>
+<span id="start"></span>
+<header>
+	<label for="showmenu" role="button" aria-pressed="false" aria-label="Button to show the menu"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg></label>
+	<h1>{{ default .Params.linkTitle .Title  |.Page.RenderString}}</h1>
+	<label for="showtoc" role="button" aria-pressed="false" aria-label="Button to show the table of content"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2zm0 4h14v-2H3v2zm0 4h14v-2H3v2zm16 0h2v-2h-2v2zm0-10v2h2V7h-2zm0 6h2v-2h-2v2z"/><path d="M0 0h24v24H0z" fill="none"/></svg></label>
+</header>
+{{ block "before-content" . }}{{ end }}
+{{- .Content -}}
+{{ block "after-content" .}}{{ end }}
+</article>
+{{ block "toc-block" . }}{{ end }}
+</body>
+</html>

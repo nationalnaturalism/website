@@ -1,0 +1,15 @@
+{{ if .Inner }}{{ end }}
+{{ $id := .Get 0 }}
+{{ $group := printf "tabs-%s" $id }}
+
+<div role="tablist">
+{{- range $index, $tab := .Scratch.Get $group -}}
+  <input type="radio" name="{{ $group }}" id="{{ printf "%s-%d" $group $index }}" {{ if not $index }}checked="checked"{{ end }} />
+  <label role="tab" for="{{ printf "%s-%d" $group $index }}">
+    {{- $tab.Name -}}
+  </label>
+  <div role="tabpanel">
+    {{- .Content | $.Page.RenderString -}}
+  </div>
+{{- end -}}
+</div>
